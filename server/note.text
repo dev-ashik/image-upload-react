@@ -1,0 +1,21 @@
+$ npm init
+$ npm install express mongodb body-parser cors
+$ npm install nodemon --save-dev
+"scripts": {
+    "start": "nodemon index.js",
+}
+
+database connection
+$ npm install dotenv
+$ npm i express-fileupload
+
+
+in .env file
+    DB_NAME = databaseName
+
+    DB_USER = DatabaseUserName
+    DB_PASS = UserPassword
+
+.gitignore
+.env
+node_modules/

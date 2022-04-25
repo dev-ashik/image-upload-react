@@ -1,12 +1,4 @@
-// $ npm init
-// $ npm install express mongodb body-parser cors
-// $ npm install nodemon --save-dev
-// "scripts": {
-//     "start": "nodemon index.js",
-//   }
 
-// database connection
-// $npm install dotenv
 
 const express = require('express')
 const bodyParser = require('body-parser');
