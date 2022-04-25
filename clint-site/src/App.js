@@ -54,8 +54,7 @@ function App() {
           <input onChange={handleFileChange} type="file" class="form-control" name='image' placeholder="image" />
           {/* <input onChange={handleChange} type="file" class="form-control" name='image' id="exampleInputName" placeholder="Picture" /> */}
         </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <input type="submit" value="Submit"/>
       </form>
     </div>
   );
