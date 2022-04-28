@@ -41,7 +41,13 @@ app.post('/addImage', (req, res) => {
     })
   })
  
-
+  app.get('/allImages', (req, res) => {
+    imagesCollection.find({})
+    .toArray((err, document) => {
+      res.send(document);
+      console.log(document);
+    })
+  })
    
 });
 

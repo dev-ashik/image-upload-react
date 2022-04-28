@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   const [info, setInfo] = useState({});
@@ -17,6 +17,7 @@ function App() {
   }
 
   const handleFileSubmit = () => {
+
     const formData = new FormData()
     formData.append('file', file);
     formData.append('name', info.name);
@@ -37,10 +38,10 @@ function App() {
       })
   }
 
-  console.log(file);
+  // console.log(file);
   return (
     <div className="App">
-      <form onSubmit={handleFileSubmit}>
+      <form className='formStyle' onSubmit={handleFileSubmit}>
         <div class="form-group">
           <label for="email">Name</label>
           <input onBlur={handleBlur} type="text" class="form-control" placeholder="Name" name='name' />
@@ -56,8 +57,35 @@ function App() {
         </div>
         <input type="submit" value="Submit"/>
       </form>
+
+      <ImageGalary/>
     </div>
   );
 }
+
+
+const ImageGalary = () => {
+  const [allImages, setAllImages] = useState([]);
+
+  useEffect(()=>{
+    fetch('http://localhost:5000/allImages')
+    .then(res => res.json())
+    .then(data => setAllImages(data))
+  }, [])
+
+  console.log(allImages);
+  return (
+    <div className='floatClear'>
+      {
+        allImages.map(image => <div className='images'>
+          <img src={`http://localhost:5000/${image.img}`} alt="" height='100' width='100' />
+          <p>Name: {image.name}</p>
+          <p>Email: {image.email}</p>
+        </div>)
+      }
+    </div>
+  );
+};
+
 
 export default App;

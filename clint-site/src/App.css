@@ -1,4 +1,8 @@
 .App {
+  text-align: center;
+}
+
+.formStyle {
   width: 300px;
   text-align: center;
   margin: auto;
@@ -21,4 +25,20 @@ input[type="submit"] {
   background-color: lightsalmon;
   border: none;
   margin-top: 50px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.images {
+  float: left;
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 1px 1px 10px lightgray;
+  border-radius: 7px;
+}
+
+.floatClear {
+  content: '';
+  clear: both;
+  display: table;
 }
