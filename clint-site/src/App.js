@@ -25,7 +25,7 @@ function App() {
 
     console.log(formData);
 
-    fetch('http://localhost:5000/addImage', {
+    fetch('https://image-upload-r.herokuapp.com/addImage', {
       method: 'POST',
       body: formData
     })
@@ -68,7 +68,7 @@ const ImageGalary = () => {
   const [allImages, setAllImages] = useState([]);
 
   useEffect(()=>{
-    fetch('http://localhost:5000/allImages')
+    fetch('https://image-upload-r.herokuapp.com/allImages')
     .then(res => res.json())
     .then(data => setAllImages(data))
   }, [])
@@ -78,7 +78,7 @@ const ImageGalary = () => {
     <div className='floatClear'>
       {
         allImages.map(image => <div className='images'>
-          <img src={`http://localhost:5000/${image.img}`} alt="" height='100' width='100' />
+          <img src={`https://image-upload-r.herokuapp.com/${image.img}`} alt="" height='100' width='100' />
           <p>Name: {image.name}</p>
           <p>Email: {image.email}</p>
         </div>)
